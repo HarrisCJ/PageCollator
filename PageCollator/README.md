@@ -1,6 +1,6 @@
 # PageCollator
 
-`PageCollator` is a .NET console app that fetches a paginated API and stitches all pages into a **single JSON array** written to disk. It’s designed for very large datasets and streams each page directly to the output file, so memory usage stays low.
+`PageCollator` is a .NET console app that fetches a paginated API and stitches all pages into a **single JSON array** written to disk. Each page is streamed to the output file to reduce memory usage.
 
 ## Features
 

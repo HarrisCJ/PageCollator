@@ -106,12 +106,6 @@ dotnet publish -c Release -r linux-x64 --self-contained true -p:PublishSingleFil
 ## Troubleshooting
 
 - **Output file only contains `[`**: the app exited before the first page was written (e.g., invalid URL/token). Re-run with correct inputs.
-- **Other users see your build path in exceptions**: run the executable with:
-  ```bash
-  PageCollator.exe --contentRoot .
-  ```
-  so `appsettings.json` is loaded relative to the executable.
-
 ---
 
 If you want a different URL pattern or pagination scheme, open an issue or edit `ApiPageFetcher` in `PageCollator/ApiPageFetcher.cs`.

@@ -50,6 +50,9 @@ Console.WriteLine();
 // ──────────────────────────────────────────────
 var builder = Host.CreateApplicationBuilder(args);
 
+// Ensure config files are resolved relative to the executable's directory,
+// not the original build-time path. Critical for single-file published apps.
+builder.Configuration.SetBasePath(AppContext.BaseDirectory);
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: false);
 
 // Bind rate-limiting settings from appsettings.json (sensible defaults)
